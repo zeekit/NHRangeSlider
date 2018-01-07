@@ -98,7 +98,7 @@ open class NHRangeSliderView: UIView {
     }
     
     /// stepValue. If set, will snap to discrete step points along the slider . Default to nil
-    @IBInspectable open var stepValue: Double? = nil {
+    open var stepValue: Double? = nil {
         didSet {
             self.rangeSlider?.stepValue = stepValue
         }
@@ -220,7 +220,7 @@ open class NHRangeSliderView: UIView {
     /// Selected value for filterItem will also be updated
     ///
     /// - Parameter rangeSlider: the changed rangeSlider
-    open func rangeSliderValueChanged(_ rangeSlider: NHRangeSlider) {
+    @objc open func rangeSliderValueChanged(_ rangeSlider: NHRangeSlider) {
        
         delegate?.sliderValueChanged(slider: rangeSlider)
         
@@ -339,7 +339,7 @@ open class NHRangeSliderView: UIView {
     private func estimatelabelSize(font: UIFont,string: String, constrainedToWidth width: Double) -> CGSize{
         return string.boundingRect(with: CGSize(width: width, height: DBL_MAX),
                                    options: NSStringDrawingOptions.usesLineFragmentOrigin,
-                                   attributes: [NSFontAttributeName: font],
+                                   attributes: [NSAttributedStringKey.font: font],
                                    context: nil).size
 
     }
