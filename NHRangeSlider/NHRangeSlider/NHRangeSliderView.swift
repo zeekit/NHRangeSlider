@@ -261,7 +261,7 @@ open class NHRangeSliderView: UIView {
             let commonWidth = self.bounds.width
             var titleLabelMaxY : CGFloat = 0
             
-            if !titleLabel.isHidden && titleLabel.text != nil && titleLabel.text!.characters.count > 0 {
+            if !titleLabel.isHidden && titleLabel.text != nil && titleLabel.text!.count > 0 {
                 titleLabel.frame = CGRect(x: 0,
                                           y: 0,
                                           width: commonWidth  ,
@@ -315,7 +315,7 @@ open class NHRangeSliderView: UIView {
             
             var titleLabelMaxY : CGFloat = 0
             
-            if !titleLabel.isHidden && titleLabel.text != nil && titleLabel.text!.characters.count > 0 {
+            if !titleLabel.isHidden && titleLabel.text != nil && titleLabel.text!.count > 0 {
                 titleLabelMaxY = titleLabel.font.lineHeight + self.spacing
             }
             
@@ -337,7 +337,7 @@ open class NHRangeSliderView: UIView {
     ///
     /// - returns: string size for constrained width
     private func estimatelabelSize(font: UIFont,string: String, constrainedToWidth width: Double) -> CGSize{
-        return string.boundingRect(with: CGSize(width: width, height: DBL_MAX),
+        return string.boundingRect(with: CGSize(width: width, height: .greatestFiniteMagnitude),
                                    options: NSStringDrawingOptions.usesLineFragmentOrigin,
                                    attributes: [NSAttributedString.Key.font: font],
                                    context: nil).size
