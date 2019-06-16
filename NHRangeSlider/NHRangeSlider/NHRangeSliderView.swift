@@ -288,8 +288,8 @@ open class NHRangeSliderView: UIView {
             }
             else {
                 // fix lower label to left and upper label to right
-                lowerLabelX = rangeSlider.frame.origin.x + self.spacing
-                upperLabelX = rangeSlider.frame.origin.x + rangeSlider.frame.size.width - thumbSize + self.spacing
+                lowerLabelX = rangeSlider.frame.origin.x
+                upperLabelX = rangeSlider.frame.origin.x + rangeSlider.frame.size.width - upperWidth
             }
             
             lowerLabel.frame = CGRect(      x: lowerLabelX,
