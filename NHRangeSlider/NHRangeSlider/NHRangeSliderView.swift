@@ -33,7 +33,7 @@ open class NHRangeSliderView: UIView {
 
     //MARK: properties
     
-    open var delegate: NHRangeSliderViewDelegate? = nil
+    open weak var delegate: NHRangeSliderViewDelegate? = nil
     
     /// Range slider
     open var rangeSlider : NHRangeSlider? = nil
